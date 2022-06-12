@@ -1,8 +1,13 @@
 class Item
   attr_reader :id, :name 
 
+  def initialize(id, name)
+    @id = id
+    @name = name
+  end
+
   def self.all
-    all_items = CSV.parse(File.read("db/items.csv"),headers: true)
+    all_items = CSV.parse(File.read("db/items4.csv"),headers: true)
     return all_items
   end
 

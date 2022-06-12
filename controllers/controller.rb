@@ -8,6 +8,11 @@ class Controller
     View.all(items)
   end
 
+  def index_item(item_id) 
+    item= Item.all[item_id]
+    View.one(item)
+  end
+
 end
 
 

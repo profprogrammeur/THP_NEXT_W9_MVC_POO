@@ -10,20 +10,24 @@ class Router
 
   def perform 
     puts "BIENVENUE DANS L'INVENTAIRE"
-
     while true
       case View.menu 
       when 1
         @controller.index_items
+           self.select_item
       when 4
         View.bye
         break 
       else
        View.input_error
-
       end
     end
   end
+
+  def select_item
+    @controller.index_item(View.menu_pick_one-1)
+  end
+
 end
 
 
